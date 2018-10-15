@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect, render_template, session, flash
 from flask_sqlalchemy import SQLAlchemy
-
+import os
+import jinja2
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -50,7 +51,7 @@ def newpost():
         db.session.commit()
         return redirect('/blog?id=' + str(blog.id))
 
-    return render_template('add-post.html', title_err=title_error, new_blog_err=new_blog_error)
+    return render_template('add-post.html', title_error=title_error, new_blog_error=new_blog_error)
 
 @app.route('/blog', methods=['GET'])
 def blog_listings():
