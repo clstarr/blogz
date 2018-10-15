@@ -13,7 +13,7 @@ class Blog(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
-    new_blog = db.Column(db.String(750))
+    new_blog = db.Column(db.String(500))
     completed = db.Column(db.Boolean)
     
     def __init__(self, title, new_blog):
