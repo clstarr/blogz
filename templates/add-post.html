@@ -12,7 +12,7 @@
                             <label for="title"><b>Title for your new blog:<b></label>
                             <br/>
                             <input row="5" id="title" name="title" type="text" value="{{request.form['title']}}"/>
-                            <span class="error">{{title_err}}</span>
+                            <span class="error">{{title_error}}</span>
                         </td>
                     </tr>
                     <tr>
@@ -20,7 +20,7 @@
                             <label for="new_blog"><b>Your new blog:<b></label>
                             <br/>
                             <textarea row="5" id="new_blog" name="new_blog">{{request.form['new_blog']}}</textarea>
-                            <span class="error">{{new_blog_err}}</span>
+                            <span class="error">{{new_blog_error}}</span>
                         </td>
                     </tr>
                 </tbody>
