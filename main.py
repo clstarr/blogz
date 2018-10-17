@@ -42,7 +42,7 @@ class User(db.Model):
 
 @app.before_request
 def require_login():
-    allowed_routes = ['login', 'signup', 'blog', 'index']
+    allowed_routes = ['login', 'signup', 'blog-listings', 'index']
     if request.endpoint not in allowed_routes and 'username' not in session:
         return redirect('/login')
 
@@ -115,16 +115,6 @@ def blog_listings():
     else:
         blogs = Blog.query.all()
         return render_template('singleUser.html', blogs=blogs)
-
-    # if request.args:
-     #   id = request.args.get("id")
-      #  blog = Blog.query.get(id)
-       # return render_template('blog-post.html', title="Build a blog", blog=blog)
-    # else:
-     #   blogs = Blog.query.all()
-      #
-       # return render_template('blog-listings.html', blogs=blogs)
-
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
